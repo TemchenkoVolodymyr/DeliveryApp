@@ -1,0 +1,13 @@
+.containerTopLayout {
+  display: grid;
+
+  grid-template-columns: 200px 1fr;
+}
+
+.containerMain {
+  grid-column: 2;
+}
+
+.containerNav {
+  grid-column: 1;
+}
