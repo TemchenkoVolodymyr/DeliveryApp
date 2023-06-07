@@ -9,7 +9,8 @@ const Cart = () => {
 
   let getData = JSON.parse(localStorage.getItem('product'));
 
-
+  let deleteData = useSelector((state) => state.deleteDataCart)
+  console.log(deleteData)
 
   return (
     <NavLink to='cart' >

@@ -15,7 +15,7 @@ const KebabSection = () => {
       getParseData = []
     }
 
-    for (let el of data) {
+    for (let el of kebabData.kebab) {
       if (el.id === Number(e.target.id)) {
         let index = getParseData.findIndex(item => item.id === Number(e.target.id))
         if(index === -1){

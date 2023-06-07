@@ -1,5 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import style from './CartPage.scss'
+import {useDispatch, useSelector} from "react-redux";
+import {deleteDataCart} from "./cartPageReducer";
+import {removeDataAC} from "./cartPageAC";
 
 
 const CartPage = () => {
@@ -13,10 +16,14 @@ const CartPage = () => {
   let [address, setAddress] = useState("")
   let [phone, setPhone] = useState("")
 
+  let deleteData = useSelector((state) => state.deleteDataCart)
+  let dispatch = useDispatch()
+
 
   useEffect(() => {
     let getData = localStorage.getItem('product');
     setParseData(JSON.parse(getData))
+    dispatch(removeDataAC(parseData))
 
   }, [])
 
@@ -26,6 +33,7 @@ const CartPage = () => {
       if (parseData[i].id === id) {
         parseData.splice(i, 1)
         localStorage.setItem('product', JSON.stringify(parseData))
+        dispatch(removeDataAC(parseData))
       }
     }
   }

@@ -6,9 +6,9 @@ export const cartPageAC = (data) => {
     data:data
   }
 }
-export const removeDataAC = (id) => {
+export const removeDataAC = (data) => {
   return{
     type:REMOVE_CART_DATA,
-    id:id
+    data:data
   }
 }

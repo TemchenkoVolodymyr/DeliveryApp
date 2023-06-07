@@ -1,21 +1,9 @@
 import React from 'react';
+import {useSelector} from "react-redux";
 
 const McDaysSection = () => {
-  let data = [
-    {
-      product: "Fries",
-      price: 25.5,
-      id: 3,
-      image: 'https://th.bing.com/th/id/OIP.sQa_WWkKGUOpifhATWclvwHaGv?w=199&h=182&c=7&r=0&o=5&pid=1.7'
-    },
-    {
-      product: "McTasty",
-      price: 10,
-      id: 4,
-      image: 'https://th.bing.com/th/id/OIP.ShIunFmEmHdm2-wxEDhB_gHaFP?w=253&h=180&c=7&r=0&o=5&pid=1.7'
-    }
-  ]
 
+  let mcDays = useSelector((state) => state.restaurants);
   const addToCart = (e) => {
     let getParseData;
     let getData = localStorage.getItem('product');
@@ -25,7 +13,7 @@ const McDaysSection = () => {
       getParseData = []
     }
 
-    for (let el of data) {
+    for (let el of mcDays.mcdays) {
       if (el.id === Number(e.target.id)) {
         let index = getParseData.findIndex(item => item.id === Number(e.target.id))
         if(index === -1){
@@ -43,7 +31,7 @@ const McDaysSection = () => {
 
   return (
     <div>
-      {data.map(item => <div>
+      {mcDays.mcdays.map(item => <div>
         <img src={item.image} alt="image-product"/>
         <h3>{item.product}</h3>
         <p>Price of product {item.price}$</p>

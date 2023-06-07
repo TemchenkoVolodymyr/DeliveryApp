@@ -1,7 +1,9 @@
 import {initialState} from "../../redux/initialState";
 
+
 export const SET_CART_DATA = "SET_CART_DATA";
-export const REMOVE_CART_DATA = "REMOVE_CART_DATA "
+export const REMOVE_CART_DATA = "REMOVE_CART_DATA ";
+
 
 export const cartPageReducer = (cart = initialState.cart, action) => {
   switch (action.type) {
@@ -15,10 +17,20 @@ export const cartPageReducer = (cart = initialState.cart, action) => {
   }
 }
 
-export const restaurantsReducer = (rest = initialState.restaurants,action) => {
+export const restaurantsReducer = (rest = initialState.restaurants, action) => {
   switch (action.type) {
 
     default :
       return rest
+  }
+}
+
+export const deleteDataCart = (deleteData = initialState.cartDelete, action) => {
+  switch (action.type) {
+    case REMOVE_CART_DATA :{
+      return action.data
+    }
+    default :
+      return deleteData
   }
 }
