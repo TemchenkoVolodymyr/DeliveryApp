@@ -9,13 +9,16 @@ export const cartPageReducer = (cart = initialState.cart, action) => {
     case SET_CART_DATA : {
       return [...cart, action.data]
     }
-    case REMOVE_CART_DATA : {
-      console.log(action.id)
-      console.log(cart)
-      return cart.splice(0,action.id)
-    }
 
     default :
       return cart
+  }
+}
+
+export const restaurantsReducer = (rest = initialState.restaurants,action) => {
+  switch (action.type) {
+
+    default :
+      return rest
   }
 }

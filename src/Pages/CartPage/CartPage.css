@@ -1,0 +1,23 @@
+.products {
+  grid-column: 1;
+}
+.products img {
+  max-width: 150px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 500px 300px;
+}
+
+.form {
+  grid-column: 2;
+}
+.form input {
+  min-width: 100%;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+/*# sourceMappingURL=CartPage.css.map */

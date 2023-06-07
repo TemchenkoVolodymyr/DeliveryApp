@@ -7,7 +7,6 @@ export const cartPageAC = (data) => {
   }
 }
 export const removeDataAC = (id) => {
-  // console.log(id)
   return{
     type:REMOVE_CART_DATA,
     id:id

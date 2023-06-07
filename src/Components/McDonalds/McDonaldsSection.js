@@ -19,6 +19,7 @@ const McDonaldsSection = () => {
     }
   ]
 
+
   const addToCart = (e) => {
     let getParseData;
     let getData = localStorage.getItem('product');
@@ -28,20 +29,19 @@ const McDonaldsSection = () => {
       getParseData = []
     }
 
-
-    for (let i = 0; i < data.length; i++) {
-
-      if (data[i].id === Number(e.target.id)) {
-
-        if (getParseData.length > 1 && getParseData[i].id === data[i].id) {
-          getParseData.splice(i, 0)
-        } else {
-          getParseData.push(data[i])
-
+    for (let el of data) {
+      if (el.id === Number(e.target.id)) {
+        let index = getParseData.findIndex(item => item.id === Number(e.target.id))
+        if(index === -1){
+          getParseData.push(el)
+        }else{
+          getParseData.splice(index,1)
         }
+
       }
-      localStorage.setItem('product', JSON.stringify(getParseData))
     }
+
+    localStorage.setItem('product', JSON.stringify(getParseData))
   }
 
   return (
@@ -50,7 +50,7 @@ const McDonaldsSection = () => {
         <img src={item.image} alt="image-product"/>
         <h3>{item.product}</h3>
         <p>Price of product {item.price}$</p>
-        <button id={`${item.id}`} onClick={addToCart}>add to cart</button>
+        <button id={`${item.id}`} onClick={(e) => addToCart(e)}>add to cart</button>
       </div>)}
     </div>
   );
