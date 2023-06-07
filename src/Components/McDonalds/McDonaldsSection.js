@@ -34,7 +34,7 @@ const McDonaldsSection = () => {
       if (data[i].id === Number(e.target.id)) {
 
         if (getParseData.length > 1 && getParseData[i].id === data[i].id) {
-          getParseData.splice(i, 1)
+          getParseData.splice(i, 0)
         } else {
           getParseData.push(data[i])
 
