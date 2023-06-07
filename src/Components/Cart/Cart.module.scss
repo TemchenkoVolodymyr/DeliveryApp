@@ -1,0 +1,17 @@
+.container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  img{
+    max-width: 200px;
+  }
+  .counter{
+    color: #efefef;
+    font-size: 40px;
+    font-weight: 900;
+    background-color: #3f3939;
+    border-radius: 50px;
+    padding: 20px;
+  }
+}

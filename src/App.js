@@ -6,6 +6,7 @@ import McDonaldsSection from "./Components/McDonalds/McDonaldsSection";
 import McDaysSection from "./Components/McDays/McDaysSection";
 import KebabSection from "./Components/Kebab/KebabSection";
 import KfcSection from "./Components/Kfc/KfcSection";
+import CartPage from "./Pages/CartPage/CartPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="kfc" element={<KfcSection/>}/>
       <Route path="kebab" element={<KebabSection/>}/>
       <Route path="mcdays" element={<McDaysSection/>}/>
+      <Route path="cart" element={<CartPage/>}/>
     </Route>
     </Routes>
   );
