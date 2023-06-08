@@ -6,6 +6,8 @@ import CartItems from "./CartItems/CartItems";
 import "./CartPage.scss"
 
 
+
+
 const CartPage = () => {
 
   let [parseData, setParseData] = useState(null)
@@ -96,10 +98,9 @@ const CartPage = () => {
 
         <input placeholder="phone" value={phone} type="number" onChange={changePhone}/>
         <button onClick={submitForm}>Send</button>
-
-        <div>sdsd</div>
+        <div>
+        </div>
       </div>
-
     </div>
   );
 };
