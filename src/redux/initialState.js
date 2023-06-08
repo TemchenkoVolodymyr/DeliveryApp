@@ -58,4 +58,5 @@ mcdays:[
   cart:[],
   cartDelete : null,
   currentOrders:null,
+  totalPrice:null,
 }

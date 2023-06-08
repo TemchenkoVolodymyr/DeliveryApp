@@ -1,5 +1,5 @@
 import {combineReducers} from "redux";
-import {cartPageReducer, deleteDataCart, restaurantsReducer} from "../Pages/CartPage/cartPageReducer";
+import {cartPageReducer, deleteDataCart, restaurantsReducer, totalPriceCart} from "../Pages/CartPage/cartPageReducer";
 import {cartReducer} from "../Components/Cart/cartReducer";
 
 
@@ -8,4 +8,5 @@ export default combineReducers({
   restaurants : restaurantsReducer,
   deleteDataCart: deleteDataCart,
   currentCart : cartReducer,
+  total:totalPriceCart,
 })

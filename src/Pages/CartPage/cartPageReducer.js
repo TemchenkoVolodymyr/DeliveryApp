@@ -3,6 +3,7 @@ import {initialState} from "../../redux/initialState";
 
 export const SET_CART_DATA = "SET_CART_DATA";
 export const REMOVE_CART_DATA = "REMOVE_CART_DATA ";
+export const SET_TOTAL_PRICE = "SET_TOTAL_PRICE"
 
 
 export const cartPageReducer = (cart = initialState.cart, action) => {
@@ -32,5 +33,15 @@ export const deleteDataCart = (deleteData = initialState.cartDelete, action) => 
     }
     default :
       return deleteData
+  }
+}
+
+export const totalPriceCart = (total = initialState.totalPrice,action) =>{
+  switch (action.type) {
+    case SET_TOTAL_PRICE : {
+      return action.total
+    }
+      default : return total
+
   }
 }

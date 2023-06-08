@@ -1,6 +1,7 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {cartAC} from "../Cart/CartAC";
+import {totalPriceAC} from "../../Pages/CartPage/cartPageAC";
 
 
 const McDonaldsSection = () => {
@@ -23,6 +24,7 @@ const McDonaldsSection = () => {
         if(index === -1){
           getParseData.push(el)
           dispatch(cartAC(getParseData))
+          dispatch(totalPriceAC(el.price))
         }else{
           getParseData.splice(index,1)
           dispatch(cartAC(getParseData))

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import style from './CartPage.scss'
 import {useDispatch, useSelector} from "react-redux";
 import {deleteDataCart} from "./cartPageReducer";
-import {removeDataAC} from "./cartPageAC";
+import {removeDataAC, totalPriceAC} from "./cartPageAC";
 import {cartAC} from "../../Components/Cart/CartAC";
 import CartItems from "./CartItems/CartItems";
 
@@ -15,6 +15,8 @@ const CartPage = () => {
   let [name, setName] = useState("")
   let [address, setAddress] = useState("")
   let [phone, setPhone] = useState("")
+
+  let price = useSelector((state) => state.total)
 
   let dispatch = useDispatch()
 
@@ -38,9 +40,14 @@ const CartPage = () => {
     }
   }
   let totalPrice = 0
-  parseData && parseData.map(item => {
-    totalPrice += item.price
-  })
+
+  useEffect(() => {
+    parseData && parseData.map(item => {
+      totalPrice += item.price
+      dispatch(totalPriceAC(totalPrice))
+    })
+  },[parseData])
+
 
 
   const changeName = (e) => {
@@ -76,7 +83,7 @@ const CartPage = () => {
     <div className="container">
       <div className={"products"}>
         {parseData && parseData.map(item => <CartItems data={item} deleteItem={deleteItemCart}></CartItems>)}
-        <p>TOTAL PRICE : {totalPrice} </p>
+        <p>TOTAL PRICE : {price} </p>
       </div>
       <div className={"form"}>
         <h1> ORDER PAGE</h1>
