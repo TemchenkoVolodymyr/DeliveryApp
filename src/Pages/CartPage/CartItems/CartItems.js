@@ -35,7 +35,7 @@ const CartItems = (props) => {
     return (
         <>
             <p>{data.product}</p>
-            <p>{data.price}</p>
+            <p>{data.price} $</p>
             <img src={data.image} alt="image"/>
             <p>{count}</p>
             <button onClick={() => incCountCart(data.id)}>+</button>

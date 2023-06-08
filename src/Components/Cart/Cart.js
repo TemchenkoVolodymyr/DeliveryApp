@@ -6,16 +6,9 @@ import {useSelector} from "react-redux";
 
 
 const Cart = () => {
-    let [x, setX] = useState(null)
 
-    let cart = useSelector((state) => state.cartDelete)
     let current = useSelector((state) => state.currentCart)
-    useEffect(() => {
-        setX(JSON.parse(localStorage.getItem('product')));
-    }, [cart])
 
-    let deleteData = useSelector((state) => state.deleteDataCart)
-    console.log(deleteData)
 
     return (
         <NavLink to='cart'>

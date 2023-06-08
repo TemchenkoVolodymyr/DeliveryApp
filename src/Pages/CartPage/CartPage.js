@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import style from './CartPage.scss'
 import {useDispatch, useSelector} from "react-redux";
-import {deleteDataCart} from "./cartPageReducer";
 import {removeDataAC, totalPriceAC} from "./cartPageAC";
 import {cartAC} from "../../Components/Cart/CartAC";
 import CartItems from "./CartItems/CartItems";
+import "./CartPage.scss"
 
 
 const CartPage = () => {
