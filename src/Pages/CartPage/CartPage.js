@@ -9,8 +9,6 @@ import CartItems from "./CartItems/CartItems";
 
 const CartPage = () => {
 
-  let [count, setCount] = useState(0);
-
   let [parseData, setParseData] = useState(null)
 
   let [email, setEmail] = useState("")
@@ -18,7 +16,6 @@ const CartPage = () => {
   let [address, setAddress] = useState("")
   let [phone, setPhone] = useState("")
 
-  let deleteData = useSelector((state) => state.deleteDataCart)
   let dispatch = useDispatch()
 
 
@@ -78,7 +75,7 @@ const CartPage = () => {
   return (
     <div className="container">
       <div className={"products"}>
-        {parseData && parseData.map(item => <CartItems data={parseData} deleteItem={deleteItemCart}></CartItems>)}
+        {parseData && parseData.map(item => <CartItems data={item} deleteItem={deleteItemCart}></CartItems>)}
         <p>TOTAL PRICE : {totalPrice} </p>
       </div>
       <div className={"form"}>

@@ -16,14 +16,13 @@ const CartItems = (props) => {
     }
     return (
         <>
-                {data ? data.map(item => <><p>{item.product}</p>
-                    <p>{item.price}</p>
-                    <img src={item.image} alt="image"/>
+                <p>{data.product}</p>
+                    <p>{data.price}</p>
+                    <img src={data.image} alt="image"/>
                     <p>{count}</p>
                     <button onClick={incCountCart}>+</button>
                     <button onClick={divCountCart}>-</button>
-                    <button onClick={() => deleteItem(item.id)}>delete product</button>
-                </>) : null}
+                    <button onClick={() => deleteItem(data.id)}>delete product</button>
         </>
     );
 };
