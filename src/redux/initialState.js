@@ -56,5 +56,6 @@ mcdays:[
     image: 'https://th.bing.com/th/id/OIP.ShIunFmEmHdm2-wxEDhB_gHaFP?w=253&h=180&c=7&r=0&o=5&pid=1.7'}],},
 
   cart:[],
-  cartDelete : null
+  cartDelete : null,
+  currentOrders:null,
 }

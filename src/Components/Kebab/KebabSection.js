@@ -1,9 +1,11 @@
 import React from 'react';
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {cartAC} from "../Cart/CartAC";
 
 const KebabSection = () => {
 
   let kebabData = useSelector((state) => state.restaurants);
+  let dispatch = useDispatch()
 
 
   const addToCart = (e) => {
@@ -20,8 +22,10 @@ const KebabSection = () => {
         let index = getParseData.findIndex(item => item.id === Number(e.target.id))
         if(index === -1){
           getParseData.push(el)
+          dispatch(cartAC(getParseData))
         }else{
           getParseData.splice(index,1)
+          dispatch(cartAC(getParseData))
         }
 
       }

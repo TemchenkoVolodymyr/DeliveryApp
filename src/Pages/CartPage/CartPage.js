@@ -3,6 +3,8 @@ import style from './CartPage.scss'
 import {useDispatch, useSelector} from "react-redux";
 import {deleteDataCart} from "./cartPageReducer";
 import {removeDataAC} from "./cartPageAC";
+import {cartAC} from "../../Components/Cart/CartAC";
+import CartItems from "./CartItems/CartItems";
 
 
 const CartPage = () => {
@@ -34,6 +36,7 @@ const CartPage = () => {
         parseData.splice(i, 1)
         localStorage.setItem('product', JSON.stringify(parseData))
         dispatch(removeDataAC(parseData))
+        dispatch(cartAC(parseData))
       }
     }
   }
@@ -42,14 +45,6 @@ const CartPage = () => {
     totalPrice += item.price
   })
 
-  const incCountCart = () => {
-    setCount(count + 1)
-  }
-  const divCountCart = () => {
-    if (count !== 0) {
-      setCount(count - 1)
-    }
-  }
 
   const changeName = (e) => {
     setName(e.target.value)
@@ -83,14 +78,7 @@ const CartPage = () => {
   return (
     <div className="container">
       <div className={"products"}>
-        {parseData ? parseData.map(item => <><p>{item.product}</p>
-          <p>{item.price}</p>
-          <img src={item.image} alt="image"/>
-          <p>{count}</p>
-          <button onClick={incCountCart}>+</button>
-          <button onClick={divCountCart}>-</button>
-          <button onClick={() => deleteItemCart(item.id)}>delete product</button>
-        </>) : null}
+        {parseData && parseData.map(item => <CartItems data={parseData} deleteItem={deleteItemCart}></CartItems>)}
         <p>TOTAL PRICE : {totalPrice} </p>
       </div>
       <div className={"form"}>
