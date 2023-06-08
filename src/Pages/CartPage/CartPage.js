@@ -96,7 +96,10 @@ const CartPage = () => {
 
         <input placeholder="phone" value={phone} type="number" onChange={changePhone}/>
         <button onClick={submitForm}>Send</button>
+
+        <div>sdsd</div>
       </div>
+
     </div>
   );
 };
