@@ -36,6 +36,8 @@ const CartPage = () => {
         localStorage.setItem('product', JSON.stringify(parseData))
         dispatch(removeDataAC(parseData))
         dispatch(cartAC(parseData))
+        let getData = localStorage.getItem('product')
+        setParseData(JSON.parse(getData))
       }
     }
   }
@@ -83,7 +85,7 @@ const CartPage = () => {
     <div className="container">
       <div className={"products"}>
         {parseData && parseData.map(item => <CartItems data={item} deleteItem={deleteItemCart}></CartItems>)}
-        <p>TOTAL PRICE : {price} </p>
+        <p>{parseData && parseData.length > 1  ? `TOTAL PRICE : ${price} ` : "Your cart is clear"}</p>
       </div>
       <div className={"form"}>
         <h1> ORDER PAGE</h1>

@@ -13,7 +13,6 @@ const Cart = () => {
     useEffect(() => {
         setX(JSON.parse(localStorage.getItem('product')));
     }, [cart])
-    // let getData = JSON.parse(localStorage.getItem('product'));
 
     let deleteData = useSelector((state) => state.deleteDataCart)
     console.log(deleteData)
