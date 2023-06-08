@@ -3,9 +3,17 @@
   flex-direction: column;
   a{
     text-decoration: none;
-    padding: 5px;
+    padding: 15px;
+    font-size: 30px;
+    background-color: #3f3939;
+    color:#ff1135;
+    margin: 10px;
+    border-radius: 15px;
     &:hover{
-      color: #ff1135;
+      color: #ffa011;
+    }
+    .active{
+      color:#030303;
     }
   }
 }

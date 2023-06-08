@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {cartAC} from "../Cart/CartAC";
 import {totalPriceAC} from "../../Pages/CartPage/cartPageAC";
 import {useParams} from "react-router";
+import style from "./ShowRestaurants.module.scss"
 
 
 const ShowRestaurants = () => {
@@ -51,8 +52,8 @@ const ShowRestaurants = () => {
     }
 console.log(restaurantData)
     return (
-        <div>
-            {restaurantData && restaurantData.map(item => <div>
+        <div className={style.container}>
+            {restaurantData && restaurantData.map(item => <div className={style.wrapper}>
                 <img src={item.image} alt="image-product"/>
                 <h3>{item.product}</h3>
                 <p>Price of product {item.price}$</p>
