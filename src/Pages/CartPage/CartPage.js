@@ -86,7 +86,7 @@ const CartPage = () => {
     <div className="container">
       <div className={"products"}>
         {parseData && parseData.map(item => <CartItems data={item} deleteItem={deleteItemCart}></CartItems>)}
-        <p>{parseData && parseData.length > 1  ? `TOTAL PRICE : ${price} ` : "Your cart is clear"}</p>
+        <p className="total">{parseData && parseData.length > 1  ? `TOTAL PRICE : ${price} $ ` : "Your cart is clear"}</p>
       </div>
       <div className={"form"}>
         <h1> ORDER PAGE</h1>

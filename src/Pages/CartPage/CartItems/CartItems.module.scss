@@ -1,0 +1,40 @@
+.buttons{
+  button{
+    padding:15px;
+    margin: 5px;
+    background-color: #3f3939;
+    border:none;
+    border-radius: 15px;
+    color: #eae9ea;
+    &:hover{
+      background-color: #ff1135;
+      color: #030303;
+      transform: scale(1.2);
+    }
+  }
+}
+.count{
+
+  font-size: 40px;
+}
+.image{
+  border-radius: 30px;
+
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+.price{
+  background-color: #3f3939;
+  border-radius: 15px;
+  padding: 10px;
+  max-width: 70px;
+  color:#ff1135;
+}
+.title{
+  color:#ff1135;
+  font-size: 40px;
+  background-color: #3f3939;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  border-radius: 15px;
+  padding: 5px;
+  max-width: 300px;
+}

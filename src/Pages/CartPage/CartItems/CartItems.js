@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {totalPriceAC} from "../cartPageAC";
 import {useDispatch, useSelector} from "react-redux";
+import style from "./CartItems.module.scss"
 
 const CartItems = (props) => {
 
@@ -34,13 +35,15 @@ const CartItems = (props) => {
     }
     return (
         <>
-            <p>{data.product}</p>
-            <p>{data.price} $</p>
-            <img src={data.image} alt="image"/>
-            <p>{count}</p>
+            <p className={style.title}>{data.product}</p>
+            <p className={style.price}>{data.price} $</p>
+            <img src={data.image} alt="image" className={style.image}/>
+            <p className={style.count}>{count}</p>
+            <div className={style.buttons}>
             <button onClick={() => incCountCart(data.id)}>+</button>
             <button onClick={() => divCountCart(data.id)}>-</button>
-            <button onClick={() => deleteItem(data.id)}>delete product</button>
+            <button onClick={() => deleteItem(data.id)}>Delete</button>
+            </div>
         </>
     );
 };

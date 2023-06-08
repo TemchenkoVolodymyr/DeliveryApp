@@ -1,7 +1,19 @@
 .products {
   grid-column: 1;
-  img{
+
+  img {
     max-width: 150px;
+  }
+
+  .total {
+
+    background-color: #3f3939;
+    color: #ff1135;
+    border-radius: 15px;
+    padding: 15px;
+    width: 400px;
+    font-size: 50px;
+
   }
 }
 
@@ -9,12 +21,32 @@
   display: grid;
   grid-template-columns: 500px 300px;
 }
-.form{
-  grid-column: 2;
-  input{
+
+.form {
+  top: 0;
+  right: 380px;
+  position: fixed;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  input {
     min-width: 100%;
-    margin: 10px ;
+    margin: 10px;
     border-radius: 5px;
     padding: 5px;
+  }
+  button{
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #ff1135;
+    color: #3f3939;
+    &:hover{
+      background-color: brown;
+      color: #fdfdfd;
+      transform: scale(1.2);
+    }
   }
 }
