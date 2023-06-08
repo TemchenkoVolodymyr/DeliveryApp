@@ -18,13 +18,13 @@ export const initialState = {
       {
         product: "Coca-Cola",
         price: 25.5,
-        id: 7,
+        id: 1,
         image: 'https://th.bing.com/th/id/OPE.dCUMgLEznRCjTw300C300?w=200&h=220&rs=1&pid=21.1'
       },
       {
         product: "Sandwich",
         price: 55,
-        id: 8,
+        id: 2,
         image: 'https://th.bing.com/th/id/OIP.psD8eStPnGMYN1f3BCGqAQHaFP?w=256&h=181&c=7&r=0&o=5&pid=1.7'
       }
     ],

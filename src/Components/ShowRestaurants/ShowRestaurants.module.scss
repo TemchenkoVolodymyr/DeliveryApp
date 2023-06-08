@@ -1,0 +1,30 @@
+.container {
+
+}
+
+.wrapper {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  padding: 10px;
+
+  img {
+    border-radius: 15px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    margin: 16px;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+
+  button {
+    padding: 15px;
+    background-color: #3f3939;
+    color: #ff1135;
+    border-radius: 15px;
+    border: none;
+    &:hover{
+      background-color: #ffa011;
+      color: #030303;
+    }
+  }
+}
