@@ -4,6 +4,9 @@ import {removeDataAC, totalPriceAC} from "./cartPageAC";
 import {cartAC} from "../../Components/Cart/CartAC";
 import CartItems from "./CartItems/CartItems";
 import "./CartPage.scss"
+import {clearTotalPriceAction} from "./cartPageReducer";
+import {clearCountAction} from "../../Components/Cart/cartReducer";
+
 
 
 
@@ -24,7 +27,12 @@ const CartPage = () => {
 
   useEffect(() => {
     let getData = localStorage.getItem('product');
-    setParseData(JSON.parse(getData))
+    if(getData !== ""){
+      setParseData(JSON.parse(getData))
+    }else{
+      return
+    }
+
     dispatch(removeDataAC(parseData))
 
   }, [])
@@ -75,7 +83,20 @@ const CartPage = () => {
         phone
       }
     }
-    localStorage.setItem('form', JSON.stringify(form))
+    if(!address || !email || !address || !phone){
+      alert('All fields are required ')
+
+    }else{
+
+      localStorage.setItem('form', JSON.stringify(form))
+      alert(`Order start to moving to ${address}`)
+      dispatch(clearTotalPriceAction())
+      localStorage.setItem('product', "")
+      let getData = localStorage.getItem('product');
+      setParseData(getData)
+      dispatch(clearCountAction())
+    }
+
     setName("")
     setEmail("")
     setAddress("")
@@ -86,7 +107,7 @@ const CartPage = () => {
     <div className="container">
       <div className={"products"}>
         {parseData && parseData.map(item => <CartItems data={item} deleteItem={deleteItemCart}></CartItems>)}
-        <p className="total">{parseData && parseData.length > 1  ? `TOTAL PRICE : ${price} $ ` : "Your cart is clear"}</p>
+        <p className="total">{parseData && parseData.length >= 1  ? `TOTAL PRICE : ${price} $ ` : "Your cart is clear"}</p>
       </div>
       <div className={"form"}>
         <h1> ORDER PAGE</h1>
